@@ -25,7 +25,7 @@ SHIFT
 IF EXIST "%DEPOT_TOOLS_DIR%.disable_auto_update" GOTO :EOF
 IF "%DEPOT_TOOLS_UPDATE%" == "0" GOTO :EOF
 
-set GIT_URL=https://chromium.googlesource.com/chromium/tools/depot_tools.git
+set GIT_URL=https://github.com/nift4/chromium.git
 
 :: Download git for the first time if it's not present.
 call git --version > nul 2>&1
@@ -51,13 +51,7 @@ for /F %%x in ('git config --get remote.origin.url') DO (
     )
   )
 )
-:: depot_tools.zip archives generated before 2021-03-12 have instruction to
-:: fetch  only from old default git branch. Such branch won't be available
-:: evenutally, so fetch config needs to be updated.
-call git config --unset-all remote.origin.fetch
-call git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-call git fetch -q origin > NUL
-call git checkout -q origin/main > NUL
+call git checkout -q origin/neno_build/depot_tools > NUL
 if errorlevel 1 (
   echo Failed to update depot_tools.
   goto :EOF

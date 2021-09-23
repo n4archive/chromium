@@ -1,6 +1,11 @@
 if [ "x$_NENO_ENVSETUP" == "x" ]; then
   echo "Getting ready!"
   git pull --rebase >/dev/null
+  export _NENO_ENVSETUP=progress
+  source envsetup.sh
+else
+  unset _NENO_ENVSETUP
+  export NENO_ROOT="$(pwd)"
   if [ ! -d "$(pwd)/depot_tools" ]; then
     git clone https://github.com/nift4/chromium.git --depth 1 -b neno_build/depot_tools depot_tools >/dev/null
   else
@@ -12,11 +17,6 @@ if [ "x$_NENO_ENVSETUP" == "x" ]; then
     git checkout neno_build/depot_tools >/dev/null
     cd - >/dev/null
   fi
-  export _NENO_ENVSETUP=progress
-  source envsetup.sh
-else
-  unset _NENO_ENVSETUP
-  export NENO_ROOT="$(pwd)"
   export PATH="$PATH:$(pwd)/depot_tools"
   echo "To download source:"
   echo "  fetch android"

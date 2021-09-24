@@ -596,11 +596,6 @@ static_library("test_support") {
       "//third_party/libvpx",
       "//ui/compositor",
     ]
-
-    sources += [
-      "../browser/compositor/test/test_image_transport_factory.cc",
-      "../browser/compositor/test/test_image_transport_factory.h",
-    ]
   }
 
   if (is_mac) {

@@ -195,7 +195,7 @@ if (enable_js_type_check) {
   }
 }
 
-if (!is_android) {
+if (true || !is_android) {
   grit("component_extension_resources") {
     source = "component_extension_resources.grd"
 

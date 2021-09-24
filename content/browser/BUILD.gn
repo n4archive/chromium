@@ -2786,7 +2786,8 @@ source_set("browser") {
     }
     defines += [ "APPCACHE_USE_SIMPLE_CACHE" ]
     libs += [ "jnigraphics" ]
-  } else {
+  }
+  if (true) {
     # Not Android.
     sources += [
       # The WebAuthn devtools protocol API is not supported in Android yet.
@@ -2944,7 +2945,7 @@ source_set("browser") {
     ]
   }
 
-  if (use_aura || is_mac) {
+  if (true || use_aura || is_mac) {
     sources += [
       "compositor/image_transport_factory.cc",
       "compositor/image_transport_factory.h",

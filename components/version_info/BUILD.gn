@@ -58,5 +58,10 @@ process_version("generate_version_info") {
     branding_file_path,
     lastchange_file,
   ]
+  if (target_cpu == "arm") {
+    sources +=  [ "../../build/android_arm.args" ]
+  } else {
+    sources +=  [ "../../build/android_x86.args" ]
+  }
   output = "$target_gen_dir/version_info_values.h"
 }

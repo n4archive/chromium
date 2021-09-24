@@ -407,7 +407,7 @@ static_library("renderer") {
     }
   }
 
-  if (!is_android) {
+  if (true || !is_android) {
     sources += [
       "cart/commerce_hint_agent.cc",
       "cart/commerce_hint_agent.h",

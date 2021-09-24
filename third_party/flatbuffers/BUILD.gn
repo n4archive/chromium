@@ -91,7 +91,6 @@ source_set("compiler_files") {
   visibility = [ ":*" ]
   deps = [ ":flatbuffers" ]
 }
-
 executable("flatc") {
   sources = [ "src/src/flatc_main.cpp" ]
   deps = [

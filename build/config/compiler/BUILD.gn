@@ -1799,9 +1799,9 @@ config("no_chromium_code") {
 config("noshadowing") {
   # This flag has to be disabled for nacl because the nacl compiler is too
   # strict about shadowing.
-  if (is_clang && !is_nacl) {
-    cflags = [ "-Wshadow" ]
-  }
+#  if (is_clang && !is_nacl) {
+#    cflags = [ "-Wshadow" ]
+#  }
 }
 
 # rtti ------------------------------------------------------------------------

@@ -219,6 +219,7 @@ repack("shell_and_test_pak") {
   ]
 }
 
+if (!is_android) {
 test("extensions_unittests") {
   use_xvfb = use_xvfb_in_this_config
 
@@ -386,4 +387,5 @@ source_set("chrome_extensions_interactive_uitests") {
     "//ui/resources:ui_test_pak",
     "//ui/web_dialogs:test_support",
   ]
+}
 }

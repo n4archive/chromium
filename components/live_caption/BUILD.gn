@@ -4,7 +4,7 @@
 
 import("//build/config/ui.gni")
 
-if (toolkit_views) {
+if (toolkit_views || is_android) {
   static_library("live_caption") {
     sources = [
       "views/caption_bubble.cc",

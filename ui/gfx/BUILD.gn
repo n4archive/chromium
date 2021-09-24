@@ -415,7 +415,7 @@ component("gfx") {
     ]
   }
 
-  if ((!use_aura && !toolkit_views) || is_ios) {
+  if ((!use_aura && !toolkit_views && !is_android) || is_ios) {
     sources -= [
       "nine_image_painter.cc",
       "nine_image_painter.h",

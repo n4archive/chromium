@@ -569,7 +569,7 @@ component("base") {
     ]
   }
 
-  if (!toolkit_views && !use_aura) {
+  if (!toolkit_views && !use_aura && !is_android) {
     sources -= [
       "dragdrop/drop_target_event.cc",
       "dragdrop/drop_target_event.h",
@@ -586,12 +586,10 @@ component("base") {
     deps += [ ":ui_base_jni_headers" ]
     libs += [ "jnigraphics" ]
 
-    sources -= [
-      "l10n/l10n_font_util.cc",
-      "models/button_menu_item_model.cc",
-      "pointer/touch_editing_controller.cc",
-      "theme_provider.cc",
-      "ui_base_types.cc",
+    sources += [
+    "dragdrop/os_exchange_data_provider_android.cc",
+    "dragdrop/os_exchange_data_provider_android.h",
+    "idle/idle_android.cc",
     ]
   }
 

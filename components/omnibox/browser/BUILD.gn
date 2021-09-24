@@ -277,7 +277,7 @@ static_library("browser") {
     "//ui/gfx",
   ]
 
-  if ((!is_android || enable_vr) && !is_ios) {
+  if (!is_ios) {
     deps += [ ":vector_icons" ]
   }
 

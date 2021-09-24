@@ -14,6 +14,8 @@ source_set("path_parser") {
     sources += [ "policy_path_parser_fuchsia.cc" ]
   } else if (is_mac) {
     sources += [ "policy_path_parser_mac.mm" ]
+  } else if (is_android) {
+    sources += [ "policy_path_parser_android.cc" ]
   } else if (is_win) {
     sources += [ "policy_path_parser_win.cc" ]
   }

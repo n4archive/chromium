@@ -98,7 +98,6 @@ group("gn_all") {
     "//tools/metrics:metrics_metadata",
     "//ui/base:ui_base_unittests",
     "//ui/color:color_unittests",
-    "//ui/gfx:gfx_unittests",
     "//url:url_unittests",
   ]
 
@@ -282,7 +281,7 @@ group("gn_all") {
     deps += [ "//printing:printing_unittests" ]
   }
 
-  if (enable_extensions) {
+  if (false && enable_extensions) {
     deps += [
       "//extensions:extensions_browsertests",
       "//extensions:extensions_unittests",
@@ -1431,7 +1430,7 @@ if (!is_ios && !is_android && !is_chromecast && !is_fuchsia) {
   }
 }
 
-if (is_android) {
+if (is_android && is_linux) {
   group("optimize_gn_gen") {
     deps = [
       # These run expensive scripts in non-default toolchains. Generally, host

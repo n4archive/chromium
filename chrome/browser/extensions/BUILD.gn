@@ -104,12 +104,12 @@ static_library("extensions") {
     "api/cryptotoken_private/cryptotoken_private_api.h",
     "api/dashboard_private/dashboard_private_api.cc",
     "api/dashboard_private/dashboard_private_api.h",
-    "api/debugger/debugger_api.cc",
-    "api/debugger/debugger_api.h",
-    "api/debugger/debugger_api_constants.cc",
-    "api/debugger/debugger_api_constants.h",
-    "api/debugger/extension_dev_tools_infobar_delegate.cc",
-    "api/debugger/extension_dev_tools_infobar_delegate.h",
+#    "api/debugger/debugger_api.cc",
+#    "api/debugger/debugger_api.h",
+#    "api/debugger/debugger_api_constants.cc",
+#    "api/debugger/debugger_api_constants.h",
+#    "api/debugger/extension_dev_tools_infobar_delegate.cc",
+#    "api/debugger/extension_dev_tools_infobar_delegate.h",
     "api/declarative_content/chrome_content_rules_registry.cc",
     "api/declarative_content/chrome_content_rules_registry.h",
     "api/declarative_content/content_action.cc",
@@ -618,6 +618,7 @@ static_library("extensions") {
     "forced_extensions/install_stage_tracker_factory.cc",
     "forced_extensions/install_stage_tracker_factory.h",
     "global_shortcut_listener.cc",
+    "global_shortcut_listener_android.cc",
     "global_shortcut_listener.h",
     "install_gate.h",
     "install_observer.cc",
@@ -788,7 +789,7 @@ static_library("extensions") {
     "//chrome/browser/image_decoder",
     "//chrome/browser/media/router",
     "//chrome/browser/media/router:media_router_feature",
-    "//chrome/browser/media/router/discovery",
+#    "//chrome/browser/media/router/discovery",
     "//chrome/browser/profiles",
     "//chrome/browser/profiles:profile",
     "//chrome/browser/resource_coordinator:intervention_policy_database_proto",
@@ -1252,6 +1253,14 @@ static_library("extensions") {
       "system_display/display_info_provider_aura.h",
     ]
   }
+
+    if (is_android) {
+      sources += [
+          "api/image_writer_private/removable_storage_provider_android.cc",
+          "system_display/display_info_provider_android.cc",
+          "system_display/display_info_provider_android.h",
+      ]
+    }
 
   if (is_fuchsia) {
     sources += [

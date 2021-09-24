@@ -8,7 +8,7 @@ import("//third_party/protobuf/proto_library.gni")
 import("//tools/grit/grit_rule.gni")
 
 # Android does not support DevTools front-end.
-if (!is_android) {
+if (true || !is_android) {
   grit("devtools_resources") {
     source = "$root_gen_dir/third_party/devtools-frontend/src/front_end/devtools_resources.grd"
 

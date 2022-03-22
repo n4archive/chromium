@@ -22,7 +22,7 @@ else
   echo "  fetch android"
   echo "  gclient sync --with_branch_heads --with_tags"
   echo "  cd src"
-  echo "  git checkout neno"
+  echo "  git checkout neno2"
   echo
   echo "To update source (from src/ directory):"
   echo "  gclient sync --with_branch_heads --with_tags"

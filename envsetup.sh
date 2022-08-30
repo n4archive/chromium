@@ -1,4 +1,4 @@
-if [ "x$_NENO_ENVSETUP" == "x" ]; then
+if [[ "x$_NENO_ENVSETUP" == "x" ]]; then
   echo "Getting ready!"
   git pull --rebase >/dev/null
   export _NENO_ENVSETUP=progress
@@ -6,7 +6,7 @@ if [ "x$_NENO_ENVSETUP" == "x" ]; then
 else
   unset _NENO_ENVSETUP
   export NENO_ROOT="$(pwd)"
-  if [ ! -d "$(pwd)/depot_tools" ]; then
+  if [[ ! -d "$(pwd)/depot_tools" ]]; then
     git clone https://github.com/nift4/chromium.git --depth 1 -b neno_build/depot_tools depot_tools >/dev/null
   else
     cd depot_tools
